@@ -20,3 +20,11 @@ gulp.task('bower-version', function() {
     .pipe(bowerVersion());
 });
 ```
+
+## Options
+
+#### showUpToDate
+Type: `Boolean`
+Default value: `false`
+
+If true, dependencies that are out of date will be listed.

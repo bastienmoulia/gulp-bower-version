@@ -37,7 +37,7 @@ var gulpBowerVersion = function (options) {
               if (!result.upToDate) {
                 gutil.log(result.name + ' is out of date. Your version: ' + result.version + ' latest: ' + result.latest);
               } else {
-                if (!options.hideUpToDate) {
+                if (options.showUpToDate) {
                   gutil.log(result.name + ' is up to date.');
                 }
               }
@@ -64,7 +64,7 @@ var gulpBowerVersion = function (options) {
               if (!semver.satisfies(latest, dependency.version)) {
                 gutil.log(dependency.name + ' is out of date. Your version: ' + dependency.version + ' latest: ' + latest);
               } else {
-                if (!options.hideUpToDate) {
+                if (options.showUpToDate) {
                   gutil.log(dependency.name + ' is up to date.');
                 }
               }
