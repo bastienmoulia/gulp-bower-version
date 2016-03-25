@@ -60,7 +60,10 @@ var gulpBowerVersion = function (options) {
           bower.commands
             .info(dependency.name, '')
             .on('end', function(results) {
-              var latest = results.versions[0];
+              var latest = results.latest.version;
+              if (options.showPrerelease || value.indexOf('-') > -1) {
+                latest = results.versions[0];
+              }
               if (!semver.satisfies(latest, dependency.version)) {
                 gutil.log(dependency.name + ' is out of date. Your version: ' + dependency.version + ' latest: ' + latest);
               } else {

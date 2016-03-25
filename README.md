@@ -28,3 +28,9 @@ Type: `Boolean`
 Default value: `false`
 
 If true, dependencies that are out of date will be listed.
+
+#### showPrerelease
+Type: `Boolean`
+Default value: `false`
+
+If true, versions of dependencies are compared to prereleased versions and not the last stable version.

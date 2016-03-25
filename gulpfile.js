@@ -6,7 +6,10 @@ gulp.task('default', ['bower-version', 'lint']);
 
 gulp.task('bower-version', function() {
   return gulp.src('./test/bower.json')
-    .pipe(bowerVersion());
+    .pipe(bowerVersion({
+      showUpToDate: false,
+      showPrerelease: false
+    }));
 });
 
 gulp.task('lint', function () {
